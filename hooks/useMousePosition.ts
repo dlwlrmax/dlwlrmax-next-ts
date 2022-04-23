@@ -11,6 +11,30 @@ export default function useMousePosition(): MOUSE_POSITION {
   const moveHandler = (e: MouseEvent) => {
     setMousePosition({ ...mousePos, x: e.clientX, y: e.clientY });
   };
+  const throttleFunc = (func: any, delay: number) => {
+    let shouldWait = false;
+    let waitingArgs: any;
+    const timeoutFunc = (): any => {
+      if (waitingArgs == null) {
+        shouldWait = false;
+      } else {
+        func(...waitingArgs);
+        waitingArgs = null;
+        setTimeout(timeoutFunc, delay);
+      }
+    };
+    return (...args) => {
+      if (shouldWait) {
+        waitingArgs = args;
+        return;
+      }
+
+      func(...args);
+      shouldWait = true;
+
+      setTimeout(timeoutFunc, delay);
+    };
+  };
   useEffect(() => {
     if (mousePos.x === 0 && mousePos.y === 0) {
       setMousePosition({
@@ -21,8 +45,13 @@ export default function useMousePosition(): MOUSE_POSITION {
     }
   }, []);
   useEffect(() => {
-    document.body.addEventListener('mousemove', moveHandler);
-    return () => document.body.removeEventListener('mousemove', moveHandler);
+    document.body.addEventListener(
+      'mousemove',
+      throttleFunc((e: MouseEvent) => {
+        moveHandler(e);
+      }, 50)
+    );
+    // return () => document.body.removeEventListener('mousemove', moveHandler);
   }, []);
 
   return mousePos;

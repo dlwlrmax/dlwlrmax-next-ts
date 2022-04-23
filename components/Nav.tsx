@@ -44,7 +44,9 @@ export default function Nav(): JSX.Element {
             custom={0.3}
             initial="initial"
             animate={!loading && 'animate'}>
-            <motion.div variants={imageAnimation} className={styles.imageWrapper}>
+            <motion.div
+              variants={imageAnimation}
+              className={`${styles.imageWrapper} ${styles.landscape}`}>
               <img src="../img/5.jpg" alt="image" />
             </motion.div>
             <motion.div variants={imageAnimation} className={styles.imageWrapper}>
