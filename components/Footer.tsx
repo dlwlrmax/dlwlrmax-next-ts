@@ -1,12 +1,15 @@
 import React from 'react';
 import styles from '../styles/Fotter.module.scss';
 import { CreditCardIcon, CurrencyYenIcon, EnvelopeIcon, FireIcon } from '@heroicons/react/24/solid';
-export default function Footer() {
+export default function Footer(): JSX.Element {
   return (
     <>
       <div className={`${styles.serparator} py-32`}></div>
       <footer className="bg-black text-white">
-        <div className={`${styles.footerContainer} mt-4 py-36 text-white flex justify-between`}>
+        <div
+          className={`${styles.footerContainer} mt-4 py-36 text-white flex relative justify-between`}
+        >
+          <div className={`${styles.bgText} absolute font-bold opacity-10`}>Dlwlrmax</div>
           <div className="text-9xl font-bold">Dlwlrmax</div>
           <div className={`social-container flex items-end justify-end flex-col gap-4`}>
             <div className={'icon-container text-xl flex gap-4'}>
