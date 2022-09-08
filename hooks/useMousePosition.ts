@@ -23,7 +23,7 @@ export default function useMousePosition(): MOUSE_POSITION {
         setTimeout(timeoutFunc, delay);
       }
     };
-    return (...args) => {
+    return (...args: any[]) => {
       if (shouldWait) {
         waitingArgs = args;
         return;
@@ -49,7 +49,7 @@ export default function useMousePosition(): MOUSE_POSITION {
       'mousemove',
       throttleFunc((e: MouseEvent) => {
         moveHandler(e);
-      }, 50)
+      }, 20)
     );
     // return () => document.body.removeEventListener('mousemove', moveHandler);
   }, []);
