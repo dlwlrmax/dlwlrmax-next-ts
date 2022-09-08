@@ -43,10 +43,12 @@ export default function Nav(): JSX.Element {
             variants={imageContainer}
             custom={0.3}
             initial="initial"
-            animate={!loading && 'animate'}>
+            animate={!loading && 'animate'}
+          >
             <motion.div
               variants={imageAnimation}
-              className={`${styles.imageWrapper} ${styles.landscape}`}>
+              className={`${styles.imageWrapper} ${styles.landscape}`}
+            >
               <img src="../img/5.jpg" alt="image" />
             </motion.div>
             <motion.div variants={imageAnimation} className={styles.imageWrapper}>
@@ -60,13 +62,15 @@ export default function Nav(): JSX.Element {
             custom={0.6}
             variants={imageContainer}
             initial="initial"
-            animate={!loading && 'animate'}>
+            animate={!loading && 'animate'}
+          >
             <motion.div variants={imageAnimationReverse} className={styles.imageWrapper}>
               <img src="../img/FMweg6pVEAEPFKI.jfif" alt="image" />
             </motion.div>
             <motion.div
               variants={imageAnimationReverse}
-              className={`${styles.imageWrapper} ${styles.landscape}`}>
+              className={`${styles.imageWrapper} ${styles.landscape}`}
+            >
               <img src="../img/FMwh5a5UcAIxaXO.jfif" alt="image" />
             </motion.div>
             <motion.div variants={imageAnimationReverse} className={styles.imageWrapper}>
@@ -78,7 +82,8 @@ export default function Nav(): JSX.Element {
           variants={navTextContainer}
           initial="initial"
           animate={!loading && 'animate'}
-          className={styles.navText}>
+          className={styles.navText}
+        >
           {NAV_TEXT.map((item, index) => {
             return (
               <motion.a
@@ -89,7 +94,8 @@ export default function Nav(): JSX.Element {
                 }}
                 onMouseLeave={handleMouseOut}
                 href={item.link}
-                key={index}>
+                key={index}
+              >
                 {item.text}
               </motion.a>
             );

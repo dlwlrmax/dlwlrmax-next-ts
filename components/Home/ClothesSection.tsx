@@ -16,7 +16,8 @@ export default function ClothesSection({
           <a
             className={styles.title}
             onMouseEnter={handleHoverClothes}
-            onMouseLeave={handleLeaveClothes}>
+            onMouseLeave={handleLeaveClothes}
+          >
             Clothes
           </a>
         </Link>
