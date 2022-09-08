@@ -46,7 +46,7 @@ const Home: NextPage = () => {
               </a>
               <div className={styles.image} />
             </div>
-            <div className={styles.rContent}>
+            <div className={`${styles.rContent} border-r-4 border-b-4 border-solid border-black`}>
               <ItemJewelry img={'../img/j1.png'} name="MARIEBEL Necklace" />
             </div>
           </section>

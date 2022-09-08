@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { throttleFunc } from '../util/function';
 import { MOUSE_POSITION } from '../util/Interfaces';
 import useWindowSize from './useWindowsSize';
 
@@ -10,30 +11,6 @@ export default function useMousePosition(): MOUSE_POSITION {
   });
   const moveHandler = (e: MouseEvent) => {
     setMousePosition({ ...mousePos, x: e.clientX, y: e.clientY });
-  };
-  const throttleFunc = (func: any, delay: number) => {
-    let shouldWait = false;
-    let waitingArgs: any;
-    const timeoutFunc = (): any => {
-      if (waitingArgs == null) {
-        shouldWait = false;
-      } else {
-        func(...waitingArgs);
-        waitingArgs = null;
-        setTimeout(timeoutFunc, delay);
-      }
-    };
-    return (...args: any[]) => {
-      if (shouldWait) {
-        waitingArgs = args;
-        return;
-      }
-
-      func(...args);
-      shouldWait = true;
-
-      setTimeout(timeoutFunc, delay);
-    };
   };
   useEffect(() => {
     if (mousePos.x === 0 && mousePos.y === 0) {

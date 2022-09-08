@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { useEffect } from 'react';
+import Footer from '../components/Footer';
 import Mouse from '../components/Mouse/Mouse';
 import useWindowSize from '../hooks/useWindowsSize';
 import styles from '../styles/Common.module.scss';
@@ -47,6 +48,7 @@ export default function PageLayout({ children }: Props): JSX.Element {
       <Mouse />
       <div ref={scrollContainer} className={styles.scroll}>
         {children}
+        <Footer />
       </div>
     </div>
   );

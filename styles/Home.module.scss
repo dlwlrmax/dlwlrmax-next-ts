@@ -35,7 +35,7 @@
         right: 0;
         z-index: 1;
         transform: translate(80%, 20%);
-        border-radius: 10px;
+        border-radius: $border-md;
       }
     }
 
@@ -72,15 +72,22 @@
         font-size: 7rem;
         text-align: right;
         left: 70%;
+        top: 5%;
+        background-color: $black;
+        color: $white;
+        border-radius: $border-md;
+        padding: 5px 15px;
       }
+
       .image {
         height: 100%;
         background-image: url('/img/3.jpg');
         background-size: cover;
         background-position-y: bottom;
         overflow: hidden;
+        z-index: 11;
         position: relative;
-        border-radius: 10px;
+        border-radius: $border-md;
         @include smooth-shadow();
         .illuTitle {
           @extend .title;
@@ -101,6 +108,8 @@
         transform: rotate(180deg);
         font-size: 2rem;
         margin: 10px;
+        height: 50%;
+        border-color: $black;
       }
       .image {
         width: calc(100% - 30px);

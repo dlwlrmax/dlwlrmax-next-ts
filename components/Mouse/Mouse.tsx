@@ -44,7 +44,7 @@ export default function Mouse(): JSX.Element {
     <>
       <div ref={mouseEle} className={`${styles.customMouse} ${styles[mouseState.state]}`}>
         <NavMouseContent mouseState={mouseState} />
-        {mouseState.state === 'bigTitleHover' && <ClothesMouseContent />}
+        <ClothesMouseContent />
       </div>
     </>
   );
