@@ -22,3 +22,27 @@ export const throttleFunc = (func: any, delay: number) => {
     setTimeout(timeoutFunc, delay);
   };
 };
+
+export const intersectionObserverFunc = (
+  func: CallableFunction,
+  threshold: number,
+  repeatable = false
+) => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (let entry of entries) {
+        if (entry.isIntersecting) {
+          //handle animate
+          func(true);
+        }
+        if (repeatable && !entry.isIntersecting) {
+          func(false);
+        }
+      }
+    },
+    {
+      threshold: threshold
+    }
+  );
+  return observer;
+};
