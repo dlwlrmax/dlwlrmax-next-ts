@@ -4,10 +4,10 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
 import ItemJewelry from '../components/ItemJewelry';
 import PageLayout from '../layouts/PageLayout';
-import Nav from '../components/Nav';
 import { useDispatch } from 'react-redux';
 import { change } from '../redux/features/mouseStates';
 import ClothesSection from '../components/Home/ClothesSection';
+import IntroSection from '../components/Home/IntroSection';
 const Home: NextPage = () => {
   const dispatch = useDispatch();
   const handleHoverClothes = (e: React.MouseEvent) => {
@@ -34,7 +34,7 @@ const Home: NextPage = () => {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main>
-          <Nav />
+          <IntroSection />
           <ClothesSection
             handleLeaveClothes={handleLeaveClothes}
             handleHoverClothes={handleHoverClothes}

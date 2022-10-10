@@ -15,7 +15,7 @@ export default function PageLayout({ children }: Props): JSX.Element {
   const size = useWindowSize();
   const scrollContainer = useRef<HTMLDivElement | null>(null);
   const scrollConfig: SCROLL_CONFIG = {
-    ease: 0.1,
+    ease: 0.06,
     current: 0,
     previous: 0,
     rounded: 0

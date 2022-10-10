@@ -1,9 +1,5 @@
+import { HomeModernIcon } from '@heroicons/react/24/solid';
 import { AnimatePresence, motion } from 'framer-motion';
-import React from 'react';
-import AboutIcon from '../../iconComponent/AboutIcon';
-import ClothesIcon from '../../iconComponent/ClothesIcon';
-import HomeIcon from '../../iconComponent/HomeIcon';
-import JewelryIcon from '../../iconComponent/JewelryIcon';
 //animation variant
 const nav_animation = {
   initial: { opacity: 0, x: -100 },
@@ -24,9 +20,8 @@ export default function NavMouseContent({ mouseState }: PROPS): JSX.Element {
             variants={nav_animation}
             initial="initial"
             animate="animate"
-            transition={{ type: 'spring', duration: 0.6 }}
-          >
-            <HomeIcon />
+            transition={{ type: 'spring', duration: 0.6 }}>
+            <HomeModernIcon />
           </motion.div>
         )}
       </AnimatePresence>
@@ -36,10 +31,7 @@ export default function NavMouseContent({ mouseState }: PROPS): JSX.Element {
             variants={nav_animation}
             initial="initial"
             animate="animate"
-            transition={{ type: 'spring', duration: 0.6 }}
-          >
-            <ClothesIcon />
-          </motion.div>
+            transition={{ type: 'spring', duration: 0.6 }}></motion.div>
         )}
       </AnimatePresence>
       <AnimatePresence>
@@ -48,10 +40,7 @@ export default function NavMouseContent({ mouseState }: PROPS): JSX.Element {
             variants={nav_animation}
             initial="initial"
             animate="animate"
-            transition={{ type: 'spring', duration: 0.6 }}
-          >
-            <JewelryIcon />
-          </motion.div>
+            transition={{ type: 'spring', duration: 0.6 }}></motion.div>
         )}
       </AnimatePresence>
       <AnimatePresence>
@@ -60,10 +49,7 @@ export default function NavMouseContent({ mouseState }: PROPS): JSX.Element {
             variants={nav_animation}
             initial="initial"
             animate="animate"
-            transition={{ type: 'spring', duration: 0.6 }}
-          >
-            <AboutIcon />
-          </motion.div>
+            transition={{ type: 'spring', duration: 0.6 }}></motion.div>
         )}
       </AnimatePresence>
     </>

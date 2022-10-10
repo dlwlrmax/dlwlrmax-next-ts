@@ -30,7 +30,7 @@ export const intersectionObserverFunc = (
 ) => {
   const observer = new IntersectionObserver(
     (entries) => {
-      for (let entry of entries) {
+      for (const entry of entries) {
         if (entry.isIntersecting) {
           //handle animate
           func(true);
