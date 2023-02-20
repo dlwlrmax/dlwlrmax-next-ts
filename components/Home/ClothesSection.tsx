@@ -12,7 +12,7 @@ export default function ClothesSection({
   return (
     <section className={styles.clothes}>
       <div className={styles.lImage}>
-        <Link href="/clothes">
+        <Link href="/">
           <a
             className={styles.title}
             onMouseEnter={handleHoverClothes}
